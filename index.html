@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>המשחקים שלי 🎮</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Heebo',sans-serif;
+  min-height:100vh;
+  background:#0f0e1a;
+  color:#f0eeff;
+  direction:rtl;
+}
+
+/* animated background */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse at 20% 50%,rgba(108,99,255,.25) 0%,transparent 60%),
+    radial-gradient(ellipse at 80% 20%,rgba(236,72,153,.2) 0%,transparent 50%),
+    radial-gradient(ellipse at 50% 80%,rgba(52,211,153,.15) 0%,transparent 50%);
+  pointer-events:none;
+}
+
+header{
+  position:relative;z-index:1;
+  text-align:center;padding:48px 20px 24px;
+}
+header h1{
+  font-size:2.8em;font-weight:900;
+  background:linear-gradient(135deg,#a78bfa,#ec4899,#f59e0b);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:8px;
+}
+header p{
+  font-size:1.15em;color:rgba(240,238,255,.6);
+}
+
+.grid{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px 24px 60px;
+}
+
+.card{
+  background:rgba(26,25,40,.85);
+  border:1px solid rgba(108,99,255,.2);
+  border-radius:20px;
+  overflow:hidden;
+  text-decoration:none;color:inherit;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  display:flex;flex-direction:column;
+}
+.card:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 20px 50px rgba(108,99,255,.3);
+  border-color:rgba(108,99,255,.5);
+}
+
+.card-image{
+  height:180px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:5em;
+  position:relative;overflow:hidden;
+}
+
+.card-body{
+  padding:20px 24px 24px;
+  flex:1;display:flex;flex-direction:column;
+}
+.card-body h2{
+  font-size:1.35em;font-weight:700;margin-bottom:6px;
+}
+.card-body p{
+  font-size:.95em;color:rgba(240,238,255,.55);
+  flex:1;margin-bottom:14px;
+}
+.play-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  background:linear-gradient(135deg,#6c63ff,#a78bfa);
+  color:#fff;border:none;border-radius:12px;
+  padding:10px 0;font-size:1em;font-weight:700;
+  font-family:inherit;cursor:pointer;
+  transition:opacity .2s;width:100%;
+}
+.card:hover .play-btn{opacity:.9;}
+
+/* per-card gradient backgrounds */
+.bg-heart{background:linear-gradient(135deg,#2d1b7a,#4c1d95);}
+.bg-purim{background:linear-gradient(135deg,#7c3aed,#a855f7);}
+.bg-animals{background:linear-gradient(135deg,#065f46,#059669);}
+.bg-roulette{background:linear-gradient(135deg,#92400e,#d97706);}
+.bg-feelings{background:linear-gradient(135deg,#9d174d,#ec4899);}
+.bg-exodus{background:linear-gradient(135deg,#1e3a5f,#2563eb);}
+
+footer{
+  position:relative;z-index:1;
+  text-align:center;padding:20px;
+  color:rgba(240,238,255,.3);font-size:.85em;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎮 המשחקים שלי</h1>
+  <p>בחרו משחק והתחילו לשחק!</p>
+</header>
+
+<div class="grid">
+
+  <!-- 1. מה הלב שלי אומר לי -->
+  <a class="card" href="#">
+    <div class="card-image bg-heart">💭</div>
+    <div class="card-body">
+      <h2>מה הלב שלי אומר לי 💭</h2>
+      <p>משחק רגשי מרגש שמזמין אתכם להקשיב ללב ולגלות מה הוא באמת אומר</p>
+      <div class="play-btn">▶ שחקו עכשיו</div>
+    </div>
+  </a>
+
+  <!-- 2. משחק כרטיסיות פורים -->
+  <a class="card" href="#">
+    <div class="card-image bg-purim">🎭</div>
+    <div class="card-body">
+      <h2>משחק כרטיסיות פורים 🃏</h2>
+      <p>מצאו את הזוגות התואמים במשחק זיכרון חגיגי לפורים</p>
+      <div class="play-btn">▶ שחקו עכשיו</div>
+    </div>
+  </a>
+
+  <!-- 3. חידון חיות -->
+  <a class="card" href="#">
+    <div class="card-image bg-animals">🐾</div>
+    <div class="card-body">
+      <h2>חידון חיות 🐾</h2>
+      <p>כמה טוב אתם מכירים את עולם החיות? בואו לגלות בחידון המהנה!</p>
+      <div class="play-btn">▶ שחקו עכשיו</div>
+    </div>
+  </a>
+
+  <!-- 4. משחק רולטות ארץ-עיר -->
+  <a class="card" href="#">
+    <div class="card-image bg-roulette">🎡</div>
+    <div class="card-body">
+      <h2>משחק רולטת ארץ-עיר 🌍</h2>
+      <p>סובבו את הגלגל וענו על שאלות ארץ-עיר מאתגרות</p>
+      <div class="play-btn">▶ שחקו עכשיו</div>
+    </div>
+  </a>
+
+  <!-- 5. מי מרגיש כמוני -->
+  <a class="card" href="#">
+    <div class="card-image bg-feelings">🤗</div>
+    <div class="card-body">
+      <h2>מי מרגיש כמוני? 💕</h2>
+      <p>משחק חברתי שמחבר בין אנשים דרך רגשות ותחושות משותפות</p>
+      <div class="play-btn">▶ שחקו עכשיו</div>
+    </div>
+  </a>
+
+  <!-- 6. משחק יציאת מצרים -->
+  <a class="card" href="#">
+    <div class="card-image bg-exodus">✡️</div>
+    <div class="card-body">
+      <h2>משחק יציאת מצרים 🏺</h2>
+      <p>צאו למסע מרתק בעקבות סיפור יציאת מצרים</p>
+      <div class="play-btn">▶ שחקו עכשיו</div>
+    </div>
+  </a>
+
+</div>
+
+<footer>כל המשחקים נוצרו באהבה ❤️</footer>
+
+</body>
+</html>
